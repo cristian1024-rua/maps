@@ -16,7 +16,7 @@ class _MapPageState extends State<MapPage> {
   List<LatLng> _additionalPoints = [];
   List<LatLng> _customPoints = [];
   final MapController _mapController =
-      MapController(); // Agregamos el controlador del mapa
+      MapController(); 
 
   @override
   void initState() {
@@ -120,7 +120,6 @@ class _MapPageState extends State<MapPage> {
                     _customPoints.add(LatLng(lat, lon));
                   });
 
-                  // Mueve el mapa a la ubicación agregada
                   _mapController.move(LatLng(lat, lon), 13.0);
 
                   Navigator.of(context).pop();
@@ -140,7 +139,7 @@ class _MapPageState extends State<MapPage> {
       body: _currentLocation == null
           ? const Center(child: CircularProgressIndicator())
           : FlutterMap(
-              mapController: _mapController, // Asigna el controlador aquí
+              mapController: _mapController,
               options: MapOptions(
                 center: LatLng(
                   _currentLocation!.latitude!,
